@@ -1,0 +1,363 @@
+<html>
+<head>
+<title>Interactivo</title>
+<style> 
+
+    #Boton{
+    width: 200px;
+    height: 50px;
+    background-color: aqua;     
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+
+    }
+
+
+    #titulo {
+        background: #d9d9d9;
+        padding: 20px;
+        margin: 24px auto 32px auto;
+        width: 80%;
+        max-width: 1000px;
+        text-align: center;
+        font-size: 22px;
+        line-height: 1.4;
+        border-radius: 6px;
+    }
+    #layout {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 24px 40px 24px;
+        box-sizing: border-box;
+    }
+    #imagen {
+        position: relative;
+        width: 900px;
+        height: 560px;
+        border-radius: 8px;
+        background-color: #f0f0f0;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    .jugador {
+        position: absolute;
+        width: 280px;
+        height: 260px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    .jugador:hover {
+        transform: scale(1.05);
+    }
+    #Scorpion { 
+        background-image: url('/imagenes/scorpion.jpg');
+        top: 15px;
+        left: 15px;
+    }
+    #Sonicfox { 
+        background-image: url('/imagenes/sonicfox.jpg');
+        top: 15px;
+        left: 310px;
+    }
+    #Kanimani { 
+        background-image: url('/imagenes/Kanimani.jpg');
+        top: 15px;
+        left: 605px;
+    }
+    #Rewind { 
+        background-image: url('/imagenes/rewind.jpg');
+        top: 290px;
+        left: 15px;
+    }
+    #Nicolas { 
+        background-image: url('/imagenes/Nicolas.jpg');
+        top: 290px;
+        left: 310px;
+    }
+    #Ninjakilla { 
+        background-image: url('/imagenes/ninjakilla.jpg');
+        top: 290px;
+        left: 605px;
+    }
+    #instrucciones {
+        background: #d9d9d9;
+        width: 340px;
+        min-height: 320px;
+        padding: 24px;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    
+    #imagen-jugador {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-top: 15px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        display: none;
+    }
+    
+    @media (max-width:600px){
+        #imagen { 
+            width: 100%;
+            height: auto;
+        }
+        .jugador { 
+            width: 30%;
+            height: 30%;
+        }
+    }
+
+</style>
+
+
+</head>
+<body>
+
+<div id="titulo">Bienvenido, conoce a algunos de los jugadores mas importantes de Mk actualmente.</div>
+
+<div id="layout">
+	<div id="imagen">
+		<div id="Scorpion" class="jugador" onclick="verInfo('Scorpion')"></div>
+		<div id="Sonicfox" class="jugador" onclick="verInfo('Sonicfox')"></div>
+		<div id="Kanimani" class="jugador" onclick="verInfo('Kanimani')"></div>
+		<div id="Rewind" class="jugador" onclick="verInfo('Rewind')"></div>
+		<div id="Nicolas" class="jugador" onclick="verInfo('Nicolas')"></div>
+		<div id="Ninjakilla" class="jugador" onclick="verInfo('Ninjakilla')"></div>
+	</div>
+	<div id="instrucciones">
+		<p></p>
+		<img id="imagen-jugador" alt="Imagen del jugador" />
+	</div>
+</div>    
+
+
+</body>
+
+<script type="text/javascript">
+function verInfo(id){
+	var textos = {
+		Scorpion: 'Scorpionprocs es un jugador profesional chileno. Es una fuerza dominante en la escena de Mortal Kombat, conocido por su increíble habilidad y estrategia Logros Notables:Campeón de EVO 2022 en Mortal Kombat 11. Campeón de Final Kombat 2025 en Mortal Kombat 1.Dato Curioso: Es el hermano gemelo de otro jugador profesional de élite, Nicolas.',
+		Sonicfox: 'Dominique "SonicFox" McLean es una de las personalidades más famosas y exitosas en la historia de los juegos de pelea. De origen estadounidense, es conocido por su versatilidad para dominar múltiples juegos a un nivel muy alto y por su característica fursona (un zorro azul y blanco).Juegos Principales: Se destaca en juegos de NetherRealm Studios como Mortal Kombat e Injustice, pero también ha ganado torneos en Dragon Ball FighterZ, Skullgirls y muchos otros.Reconocimientos:Nombrado "Esports Player of the Year" en The Game Awards 2018.Incluido en la lista "30 Under 30" de Forbes en 2020.',
+		Kanimani: 'Mustafa "Kanimani" Bicici es un talentoso jugador turco que ha ganado notoriedad en la escena competitiva de Mortal Kombat 1. Aunque reside en Alemania, representa a su país en torneos internacionales.Logros Recientes: Se ha posicionado como uno de los mejores jugadores de Europa, con destacadas participaciones en torneos como el Mortal Kombat Pro Kompetition y Ultimate Fighting Arena.',
+		Rewind: 'Curtis "Rewind" McCall es un jugador profesional de Estados Unidos. Es muy respetado en la comunidad por su habilidad y conocimiento en los juegos de NetherRealm.Especialidad: Principalmente Mortal Kombat e Injustice.Logros Notables: Ganó el torneo de Injustice 2 en EVO 2018, uno de los campeonatos más prestigiosos del mundo.',
+		Nicolas: 'Nicolás Martínez, conocido simplemente como Nicolas, es un jugador profesional chileno y el hermano gemelo de Scorpionprocs. Juntos, forman una de las duplas de hermanos más formidables de los esports.Logros Notables:Ha conseguido múltiples victorias y podios en torneos importantes como Combo Breaker y EVO.Constantemente se enfrenta a su hermano en las finales de los torneos, creando una emocionante rivalidad.',
+		Ninjakilla: 'Jarrad "NinjaKilla_212" Gooden es un jugador estadounidense de alto calibre, reconocido por su estilo de juego agresivo y su dominio de personajes en la saga Mortal Kombat.Logros Notables:Campeón de EVO 2023 en Mortal Kombat 11.Ganador de múltiples torneos regionales e internacionales, consolidándose como uno de los mejores del mundo.'
+	};
+	
+	var imagenes = {
+		Scorpion: '/imagenes/scorpionn.jpg',
+		Sonicfox: '/imagenes/sonic.jpg',
+		Kanimani: '/imagenes/Kanimanii.jpg',
+		Rewind: '/imagenes/rewindd.jpg',
+		Nicolas: '/imagenes/Nicolass.jpg',
+		Ninjakilla: '/imagenes/ninjakillaa.jpg'
+	};
+	
+	var p = document.querySelector('#instrucciones p');
+	var imgJugador = document.querySelector('#imagen-jugador');
+	
+	if(p){ 
+		p.textContent = textos[id] || ''; 
+	}
+	
+	if(imgJugador){
+		imgJugador.setAttribute("src", imagenes[id] || '');
+		imgJugador.style.display = 'block';
+	}
+
+}
+
+
+var pInit = document.querySelector('#instrucciones p');
+var imgInit = document.querySelector('#imagen-jugador');
+if(pInit && !pInit.textContent.trim()){
+	pInit.textContent = 'Haz clic en una imagen para ver información del jugador.';
+	if(imgInit){
+		imgInit.style.display = 'none';
+	}
+}
+</script>
+
+
+<div id="Boton" class="Invisible">Evaluacion</div>
+<img id="imagen-resultado" width="200px" src="/imagenes/feliz-cumpleaños.gif" />
+<script type="text/javascript">
+let puntaje = 0;
+let pregunta1 = "";
+
+document.getElementById("Boton").onclick = function () {
+    alert("Bienvenido a tu evaluación");
+    alert("Veremos qué tanto has aprendido sobre los proplayers de MK");
+
+    pregunta1 = prompt("¿Cuál de estos jugadores ganó el EVO 2022 de Mortal Kombat 11?");
+    if (pregunta1) {
+        pregunta1 = pregunta1.trim();
+    } else {
+        pregunta1 = "";
+    }
+
+    if (pregunta1.toLowerCase() === "scorpionprocs") {
+        alert("Correcto, Scorpionprocs ganó el EVO 2022 frente a Ninjakilla");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto, la respuesta correcta era Scorpionprocs.");
+    
+    }
+    pregunta2 = prompt("¿Qué jugador es famoso por competir usando una 'fursona' de zorro azul?");
+    if (pregunta2) {
+        pregunta2 = pregunta2.trim();
+    } else {
+        pregunta2 = "";
+    }
+    if (pregunta2.toLowerCase() === "sonicfox") {
+        alert("Correcto, SonicFox es conocido por su fursona de zorro azul.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto, la respuesta correcta era SonicFox.");
+    }
+    
+    pregunta3 = prompt ("¿Quién es el hermano gemelo de Scorpionprocs?");
+    if (pregunta3) {
+        pregunta3 = pregunta3.trim();
+    } else {
+        pregunta3 = "";
+    }
+    if (pregunta3.toLowerCase()==="nicolas") {
+        alert("Correcto, el hermano gemelo de Scorpionprocs es Nicolas.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto, la respuesta correcta es Nicolas.")
+         }
+
+
+     pregunta4 = prompt ("¿Qué jugador estadounidense ganó el torneo de Injustice 2 en EVO 2018?");
+     if (pregunta4){
+        pregunta4 = pregunta4.trim();
+    } else {
+        pregunta4 = "";
+    }   
+    if (pregunta4.toLowerCase() === "rewind"){
+        alert("Correcto, Rewind se corono como campeon de injustice 2 en EVO 2018.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto, la respuesta correcta es Rewind.");
+    }
+
+    
+    pregunta5 = prompt ("¿De qué pais es el jugador Kanimani?");
+    if (pregunta5){
+        pregunta5 = pregunta5.trim();
+    } else {
+        pregunta5 = "";
+    }
+    if (pregunta5.toLowerCase() === "turquia"){
+        alert("Correcto, Kanimani es de Turquia.");
+        puntaje += 1;
+    } else {
+        alert("Incorrecto, la respuesta correcta es Turquia.");
+    }
+
+    pregunta6 = prompt ("¿Quién ganó el EVO 2023 de Mortal Kombat 11?");
+    if (pregunta6){
+        pregunta6 = pregunta6.trim();
+    } else {
+        pregunta6 = "";
+    }
+    if (pregunta6.toLowerCase() === "ninjakilla"){
+        alert("Correcto, Ninjakilla se corono como campeon del EVO 2023 de Mortal Kombat 11.");
+        puntaje +=1;
+        } else {
+        alert("Incorrecto, la respuesta correcta es Ninjakilla.");
+    }
+
+    pregunta7 = prompt ("¿Cuál de estos jugadores fue incluido en la lista '30 Under 30' de Forbes?");
+    if (pregunta7){
+        pregunta7 = pregunta7.trim();
+    } else {
+        pregunta7 = "";
+    }
+
+    if (pregunta7.toLowerCase() === "sonicfox"){
+        alert("Correcto, Sonicfox fue incluido en la lista '30 Under 30' de Forbes.");
+        puntaje +=1;
+        } else {
+        alert("Incorrecto, la respuesta correcta es Sonicfox.");
+    }
+
+    pregunta8 = prompt ("¿Qué jugador se coronó campeón de Final Kombat 2025 en Mortal Kombat 1?");
+    if (pregunta8){
+        pregunta8 = pregunta8.trim();
+    } else {
+        pregunta8 = "";
+    }
+    if (pregunta8.toLowerCase() === "scorpionprocs"){
+        alert("Correcto, scorpionprocs se alzo con el campeonato de la final kombat 2025 en mortal kombat")
+        puntaje +=1;
+    }else {
+        alert("Incorrecto, la respuesta correcta es Scorpionprocs.");
+    }
+
+    pregunta9 = prompt ("¿Cuál es el nombre real de Rewind?");
+    if (pregunta9){
+        pregunta9 = pregunta9.trim()
+        
+    }else {
+        pregunta9 = "";
+    }
+    if (pregunta9.toLowerCase() === "curtis mccall" ){
+    alert ("Correcto, el nombre real de Rewind es Curtis McCall.");
+    puntaje +=1;
+    } else {
+        alert ("Incorrecto, la respuesta correcta es Curtis McCall.");
+    }
+
+    pregunta10 = prompt ("Cuál es el nombre real de NinjaKilla_212?");
+    if (pregunta10){
+        pregunta10 = pregunta10.trim();
+    } else {
+        pregunta10 = "";
+    }
+    if (pregunta10.toLowerCase()=== "jarrad gooden"){
+        alert("Correcto, el nombre real de NinjaKilla_212 es Jarrad Gooden.");
+        puntaje +=1;
+    }else {
+        alert("Incorrecto, la respuesta correcta es Jarrad Gooden.");
+    }
+
+
+       
+
+
+    if (puntaje >= 10) {
+        alert("Felicidades, has respondido correctamente todas las preguntas.");
+           
+}     else if (puntaje >= 7) {
+        alert("Buen trabajo, has respondido " + puntaje + " preguntas correctamente.");
+       
+    } else {
+        alert("Has respondido " + puntaje + " preguntas correctamente, sigue intentando");
+        document.getElementById("Boton").setAttribute("class", "visible");
+
+    }
+};
+</script>
+
+</html>
