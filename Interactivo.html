@@ -346,13 +346,13 @@ document.getElementById("Boton").onclick = function () {
        
 
 
-    if (puntaje >= 10) {
+    if (puntaje == 10) {
         alert("Felicidades, has respondido correctamente todas las preguntas.");
            
 }     else if (puntaje >= 7) {
         alert("Buen trabajo, has respondido " + puntaje + " preguntas correctamente.");
        
-    } else {
+    } else (puntaje <=6) {
         alert("Has respondido " + puntaje + " preguntas correctamente, sigue intentando");
         document.getElementById("Boton").setAttribute("class", "visible");
 
